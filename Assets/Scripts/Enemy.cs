@@ -22,19 +22,22 @@ public class Enemy : MonoBehaviour
         {
             float randomX = Random.Range(-8f, 8f);
             transform.position = new Vector3(randomX, 7, 0);
-        }
-        
+        }        
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        // if other is player
-        // damage player
-        // destroy us
-
         if(other.tag == "Player")
         {
+            Player player = other.transform.GetComponent<Player>();
+            
+            if (player != null) 
+            {
+                player.Damage();
+            }
+
             Destroy(this.gameObject);
+
         }
 
         if (other.tag == "Laser")
