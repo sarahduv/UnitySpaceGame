@@ -58,6 +58,7 @@
      <Compile Include="Assets\Scripts\Enemy.cs" />
      <Compile Include="Assets\Scripts\Laser.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
+     <Compile Include="Assets\Scripts\Powerup.cs" />
      <Compile Include="Assets\Scripts\SpawnManager.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Users/Sarah/Documents/GitHub/UnitySpaceGame/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
