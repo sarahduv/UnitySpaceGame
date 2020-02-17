@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2337807188235008240}
   - component: {fileID: 5476181682981742417}
   - component: {fileID: -1512831343778964584}
+  - component: {fileID: 3509247921140066668}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Laser
@@ -144,3 +145,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.2393787, y: 3.086612}
   m_EdgeRadius: 0
+--- !u!95 &3509247921140066668
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1288497238990411843}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cd4b3f75c3da983498bfbaa6eb90d6b5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
