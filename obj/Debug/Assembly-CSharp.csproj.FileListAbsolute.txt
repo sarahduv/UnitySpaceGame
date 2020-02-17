@@ -269,3 +269,7 @@ C:\Users\Sarah\Documents\GitHub\UnitySpaceGame\obj\Debug\Assembly-CSharp.csprojA
 C:\Users\Sarah\Documents\GitHub\UnitySpaceGame\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 C:\Users\Sarah\Documents\GitHub\UnitySpaceGame\obj\Debug\Assembly-CSharp.dll
 C:\Users\Sarah\Documents\GitHub\UnitySpaceGame\obj\Debug\Assembly-CSharp.pdb
+C:\Users\Sarah\Documents\GitHub\UnitySpaceGame\Temp\bin\Debug\Unity.Postprocessing.Editor.dll
+C:\Users\Sarah\Documents\GitHub\UnitySpaceGame\Temp\bin\Debug\Unity.Postprocessing.Runtime.dll
+C:\Users\Sarah\Documents\GitHub\UnitySpaceGame\Temp\bin\Debug\Unity.Postprocessing.Editor.pdb
+C:\Users\Sarah\Documents\GitHub\UnitySpaceGame\Temp\bin\Debug\Unity.Postprocessing.Runtime.pdb
