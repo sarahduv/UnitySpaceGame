@@ -84,7 +84,7 @@
     <Compile Include="Assets\Scripts\SpawnManager.cs" />
     <Compile Include="Assets\Scripts\TiltWindow.cs" />
     <Compile Include="Assets\Scripts\UIManager.cs" />
-    <None Include="Assets\Sprites\Main_Menu\SF UI\Background\LICENSE.txt" />
+    <None Include="Assets\Prefabs\LICENSE.txt" />
     <None Include="Assets\Materials\UI-Default-No-Alpha.shader" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Sarah/Documents/GitHub/UnitySpaceGame/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>

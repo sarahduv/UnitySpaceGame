@@ -99,6 +99,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Laser_Right
       objectReference: {fileID: 0}
+    - target: {fileID: 8444138004547403421, guid: 07746a88eb487ce4bbf3d4b1eb4cfd24,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -0.9306967
+      objectReference: {fileID: 0}
+    - target: {fileID: 8444138004547403421, guid: 07746a88eb487ce4bbf3d4b1eb4cfd24,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0.06367934
+      objectReference: {fileID: 0}
+    - target: {fileID: 8444138004547403421, guid: 07746a88eb487ce4bbf3d4b1eb4cfd24,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 2.3519588
+      objectReference: {fileID: 0}
+    - target: {fileID: 8444138004547403421, guid: 07746a88eb487ce4bbf3d4b1eb4cfd24,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 2.8726413
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07746a88eb487ce4bbf3d4b1eb4cfd24, type: 3}
 --- !u!4 &5002499928953644715 stripped
@@ -173,6 +193,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Laser_Left
+      objectReference: {fileID: 0}
+    - target: {fileID: 8444138004547403421, guid: 07746a88eb487ce4bbf3d4b1eb4cfd24,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07746a88eb487ce4bbf3d4b1eb4cfd24, type: 3}

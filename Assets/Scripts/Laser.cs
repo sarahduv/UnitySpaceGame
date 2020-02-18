@@ -73,6 +73,17 @@ public class Laser : MonoBehaviour
             {
                 player.Damage();
             }
+
+            if (transform.parent != null && transform.parent.childCount == 2)
+            {
+                transform.parent.GetChild(0).gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                transform.parent.GetChild(1).gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                Destroy(transform.parent.gameObject);
+            }
+            else
+            {
+                Destroy(this.gameObject);
+            }
         }
              
     }

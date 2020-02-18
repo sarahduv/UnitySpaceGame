@@ -12,6 +12,7 @@ public class MainMenu : MonoBehaviour
 
     public void LoadCoOpPlayerGame()
     {
-        SceneManager.LoadScene(3); // co-op player game scene
+        SceneManager.LoadScene(2); // co-op player game scene
+
     }
 }

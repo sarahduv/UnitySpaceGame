@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     private float _fireRate = 0.15f;
     private float _canFire = -1f;
+    private float _canFirePlayerTwo = -1f;
     [SerializeField]
     private int _lives = 3;
     private SpawnManager _spawnManager;
@@ -38,15 +39,20 @@ public class Player : MonoBehaviour
     private AudioClip _laserSoundClip;
     [SerializeField]
     private AudioSource _audioSource;
+    private GameManager _gameManager;
+
+    public bool isPlayerOne = false;
+    public bool isPlayerTwo = false;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        transform.position = new Vector3(0, 0, 0);
+
         _spawnManager = GameObject.Find("Spawn_Manager").GetComponent<SpawnManager>();
         _uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
         _audioSource = GetComponent<AudioSource>();
+        _gameManager = GameObject.Find("Game_Manager").GetComponent<GameManager>();
 
         if (_spawnManager == null)
         {
@@ -66,17 +72,45 @@ public class Player : MonoBehaviour
         {
             _audioSource.clip = _laserSoundClip;
         }
+
+        if(_gameManager == null)
+        {
+            Debug.LogError("Game manager is null.");
+        }
+
+        if (!_gameManager.isCoOpMode)
+        {
+            transform.position = new Vector3(0, 0, 0);
+        }
+        else
+        {
+
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        CalculateMovement();
-
-        if (Input.GetKeyDown(KeyCode.Space) && Time.time > _canFire)
+        if (isPlayerOne)
         {
-            FireLaser();
+            CalculateMovement();
+
+            if (Input.GetKeyDown(KeyCode.Space) && Time.time > _canFire && isPlayerOne)
+            {
+                FireLaser();
+            }
         }
+        
+        if (isPlayerTwo)
+        {
+            CalculateMovementPlayerTwo();
+
+            if(Input.GetKeyDown(KeyCode.KeypadEnter) && Time.time > _canFirePlayerTwo && isPlayerTwo)
+            {
+                FireLaser();
+            }
+        }
+        
 
     }
 
@@ -95,6 +129,69 @@ public class Player : MonoBehaviour
         else
         {
             transform.Translate(direction * (_speed * _speedMultiplier) * Time.deltaTime);
+        }
+
+        if (transform.position.y >= 0)
+        {
+            transform.position = new Vector3(transform.position.x, 0, 0);
+        }
+        else if (transform.position.y < -3.8f)
+        {
+            transform.position = new Vector3(transform.position.x, -3.8f, 0);
+        }
+
+        if (transform.position.x > 11.3f)
+        {
+            transform.position = new Vector3(-11.3f, transform.position.y, 0);
+        }
+        else if (transform.position.x < -11.3f)
+        {
+            transform.position = new Vector3(11.3f, transform.position.y, 0);
+        }
+    }
+    void CalculateMovementPlayerTwo()
+    {
+        if (_isSpeedPowerupActive)
+        {
+            if (Input.GetKey(KeyCode.Keypad8))
+            {
+                transform.Translate(Vector3.up * _speed * _speedMultiplier * Time.deltaTime);
+            }
+
+            if (Input.GetKey(KeyCode.Keypad6))
+            {
+                transform.Translate(Vector3.right * _speed * _speedMultiplier * Time.deltaTime);
+            }
+
+            if (Input.GetKey(KeyCode.Keypad4))
+            {
+                transform.Translate(Vector3.left * _speed * _speedMultiplier * Time.deltaTime);
+            }
+            if (Input.GetKey(KeyCode.Keypad5))
+            {
+                transform.Translate(Vector3.down * _speed * _speedMultiplier * Time.deltaTime);
+            }
+        }
+        else
+        {
+            if (Input.GetKey(KeyCode.Keypad8))
+            {
+                transform.Translate(Vector3.up * _speed * Time.deltaTime);
+            }
+
+            if (Input.GetKey(KeyCode.Keypad6))
+            {
+                transform.Translate(Vector3.right * _speed * Time.deltaTime);
+            }
+
+            if (Input.GetKey(KeyCode.Keypad4))
+            {
+                transform.Translate(Vector3.left * _speed * Time.deltaTime);
+            }
+            if (Input.GetKey(KeyCode.Keypad5))
+            {
+                transform.Translate(Vector3.down * _speed * Time.deltaTime);
+            }
         }
 
         if (transform.position.y >= 0)
@@ -135,8 +232,14 @@ public class Player : MonoBehaviour
         _audioSource.Play();
     }
 
+
     public void Damage()
     {
+        if (_lives < 1)
+        {
+            return;
+        }
+
         if (_isShieldActive)
         {
             _isShieldActive = false;

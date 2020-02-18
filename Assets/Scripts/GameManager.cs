@@ -8,6 +8,15 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private bool _isGameOver = false;
     // Start is called before the first frame update
+    [SerializeField]
+    public bool isCoOpMode = false;
+    public GameObject player;
+    private SpawnManager _spawnManager;
+
+    private void Start()
+    {
+
+    }
 
     private void Update()
     {

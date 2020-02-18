@@ -6,7 +6,7 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField]
     private float _speed = 4.0f;
-    private Player _player;
+    private Player _player1;
     private Animator _anim;
     [SerializeField]
     private AudioSource _audioSource;
@@ -18,10 +18,12 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _player = GameObject.Find("Player").GetComponent<Player>();
+        var player1_gameObject = GameObject.Find("Player") ?? GameObject.Find("Player1");
+        _player1 = player1_gameObject.GetComponent<Player>();
+
         _audioSource = GetComponent<AudioSource>();
 
-        if(_player == null)
+        if(_player1 == null)
         {
             Debug.LogError("_player is null.");
         }
@@ -97,9 +99,9 @@ public class Enemy : MonoBehaviour
                 Destroy(other.gameObject);
             }
 
-            if (_player != null)
+            if (_player1 != null)
             {
-                _player.AddToScore(10);
+                _player1.AddToScore(10);
             }
 
             Debug.Log("Ship died from laser");
